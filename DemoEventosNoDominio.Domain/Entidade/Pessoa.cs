@@ -2,6 +2,7 @@
 
 namespace DemoEventosNoDominio.Domain.Entidade
 {
+    //Declaração do delegate
     public delegate void ControleDeIdadeEventHandler(object source, EventArgs e);
 
     public class Pessoa
@@ -13,6 +14,7 @@ namespace DemoEventosNoDominio.Domain.Entidade
             Idade = idade;
         }
 
+        //declaração do evento
         public event ControleDeIdadeEventHandler ExcedeuIdadeLimite;
 
         private readonly int _idadeMinima = 18;
@@ -29,6 +31,7 @@ namespace DemoEventosNoDominio.Domain.Entidade
             }
             private set
             {
+                //Disparando o evento
                 if (value < _idadeMinima)
                     OnIdadeExcedida(new EventArgs());
 
@@ -37,6 +40,7 @@ namespace DemoEventosNoDominio.Domain.Entidade
         }
 
 
+        //Método apontado pelo delegate
         public virtual void OnIdadeExcedida(EventArgs e)
         {
             if (ExcedeuIdadeLimite != null)
