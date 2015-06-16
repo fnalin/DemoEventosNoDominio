@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControleDeIdadeEventArgs.cs" />
+    <Compile Include="ControleDeIdadeEventHandler.cs" />
     <Compile Include="Entidade\Pessoa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
